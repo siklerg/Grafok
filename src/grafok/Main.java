@@ -28,11 +28,11 @@ public class Main {
 
         node5.setLeft(node8);
 
-        //System.out.println("Mélységi bejárás: ");
-        //Node.szOrder(root);
+        System.out.println("Mélységi bejárás: ");
+        Node.szOrder(root);
 
-        //System.out.println("Szélességi bejárás: ");
-        //Node.mOrder(root);
+        System.out.println("Szélességi bejárás: ");
+        Node.mOrder(root);
 
 
     }
