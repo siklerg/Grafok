@@ -14,22 +14,21 @@ public class Node {
         this.data = data;
     }
 
-    public static void szOrder(Node node) { // mélységi bejárás
+    public static void melysegiRendezes(Node node) { // mélységi bejárás
         if (node != null) {
             System.out.println((node.getData()));
-            szOrder(node.getLeft());
-            szOrder(node.getRigth());
+            melysegiRendezes(node.getLeft());
+            melysegiRendezes(node.getRigth());
         }
     }
 
-    public static void mOrder(Node node) { // szélességi bejárás - bármelyik csúcsra meghívhatjuk
+    public static void szelessegiRendezes(Node node) { // szélességi bejárás - bármelyik csúcsra meghívhatjuk
         System.out.println(node.getData()); // kiírjuk a root adatát
-        getNodes(node); // kiírjuk a kapcsolódó csúcsok adatát, ha vannnak, és beletesszük őket a listába
+        getNodes(node); // kiírjuk az első csúcshoz kapcsolódó csúcsok adatát, ha vannnak, és beletesszük őket a listába
         while (nodes.size()!=0) { // addif fut a ciklus, amíg ki nem ürül a lista
             getNodes(nodes.get(0)); // a lista első elemére meghívjuk a metódust, hogy kiírassuk a kapcsolódó csúcsokat, és lementsük őket
             nodes.remove(0); /* törli a lista első elemét, így a soron következő csúcs lesz az első.
             Mivel sorba kerültek bele a csúcsok, ezért a sorrend megfelelő lesz a kiíráshoz*/
-
         }
     }
 
