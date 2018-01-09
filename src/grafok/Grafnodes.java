@@ -9,9 +9,9 @@ public class Grafnodes {
     private int data;
     private int neighboursNumber;
     private Grafnodes[] neighbourNodes;
-    private static ArrayList<Grafnodes> gnodes = new ArrayList<>(); // ebbe fogjuk tárolni zokat a node-kat, amelyeket elértünk
+    private static ArrayList<Grafnodes> gnodes = new ArrayList<>(); // ebbe fogjuk tárolni azokat a node-kat, amelyeket elértünk
 
-    Grafnodes(int data, int neighboursNumber) {
+    public Grafnodes(int data, int neighboursNumber) {
         this.data = data;
         this.neighboursNumber = neighboursNumber;
         this.neighbourNodes = new Grafnodes[neighboursNumber];
@@ -26,7 +26,7 @@ public class Grafnodes {
         this.neighbourNodes[index] = node;
     }
 
-    public Grafnodes getNeighbour(int index) {
+    private Grafnodes getNeighbour(int index) {
         return neighbourNodes[index];
     }
 
@@ -37,7 +37,7 @@ public class Grafnodes {
         }
     }
 
-    public static void useNeighbours(Grafnodes node) {
+    private static void useNeighbours(Grafnodes node) {
         if (node.neighbourNodes != null) { // itt nézzük meg, hogy a node-nak van-e, vannak-e szomszédai
             for (int i = 0; i < node.neighbourNodes.length; i++) { // ha igen, akkor kiírjuk, és beletesszük a tömbjébe
                 System.out.println(node.getNeighbour(i).getData());
